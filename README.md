@@ -1,7 +1,17 @@
 # infoshareacademy_webapi
 
-Instalacja (ręczna)
+Jeśli nie macie python3.9 (analogicznie też można 3.10)
 
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt update
+    sudo apt install python3.9 python3.9-dev python3.9-venv
+    sudo apt install python3.10 python3.10-dev python3.10-venv
+
+
+Instalacja ręczna, sklonuj repo, wejdź do katalogu z projektem i dalej
+
+    python3.9 -m venv venv
+    . venv/bin/activate
     pip install -r requirements.txt
     python manage.py migrate
     python manage.py createsuperuser
@@ -22,6 +32,8 @@ Do testowania
     r = requests.post(url, json=payload)
     r.status_code
     r.json()
+
+Stwórz widoki w pliku: words/views.py, pomocnicze opisy w komentarzach.
 
 Stwórz widok, który zwróci, ile zostało czasu do weekendu. Przyjmujemy, że weekend
 zaczynamy w piątek o 17:00 i kończymy w niedzielę 23:59:59

@@ -5,6 +5,10 @@ from rest_framework.decorators import api_view
 from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
 
+"""
+Tutaj dokładacie nowe funkcje, które potem montujecie w pliku urls.py
+"""
+
 
 def index(request):
     return HttpResponse("Hello, world. You're at the words index.")
@@ -13,6 +17,19 @@ def index(request):
 def words(request):
     data = {'words': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt...'}
     return JsonResponse(data)
+
+
+def czas(request):
+    data = {'czas': 'TODO'}
+    return JsonResponse(data)
+
+
+def sentencje(request):
+    sentencje = [
+        'aaaa',
+        'bvbbbb'
+    ]
+    return JsonResponse(sentencje[0])
 
 
 class ListUsers(APIView):
